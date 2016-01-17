@@ -1,3 +1,27 @@
+//////////////////////// Day 10: Binary Numbers!
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int testCases = sc.nextInt();
+        for (int i = 0; i < testCases; i++) {
+            int num = sc.nextInt();
+            String base2 = "";
+            while (num > 0) {
+                base2 = (num % 2) + base2;
+                num /= 2;
+            }
+            System.out.println(base2);
+        }
+    }
+}
+
 //////////////////////// Day 11: 2D-Arrays + More Review!
 
 import java.io.*;
@@ -77,21 +101,4 @@ public Difference(int[] array) {
 
 public void computeDifference() {
     maximumDifference = elements[elements.length - 1] - elements[0];
-}
-
-//////////////////////// Day 15: Linked List!
-
-public static Node insert(Node head, int data) {
-    
-    if (head == null) {
-        head = new Node(data);
-    } else {
-        Node temp = head;
-        while (temp.next != null) {
-            temp = temp.next;
-        }
-        temp.next = new Node(data);
-    }
-    return head;
-              	
 }

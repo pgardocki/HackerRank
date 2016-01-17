@@ -1,3 +1,20 @@
+//////////////////////// Day 15: Linked List!
+
+public static Node insert(Node head, int data) {
+    
+    if (head == null) {
+        head = new Node(data);
+    } else {
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = new Node(data);
+    }
+    return head;
+                
+}
+
 //////////////////////// Day 16: Sorting!
 
 import java.io.*;
@@ -40,5 +57,3 @@ public class Solution {
 //////////////////////// Day 18: Queues & Stacks!
 
 //////////////////////// Day 19: Interfaces!
-
-//////////////////////// Day 20: Review + More String Methods!

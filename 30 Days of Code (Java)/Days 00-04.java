@@ -1,4 +1,12 @@
-//////////////////////// Day 1 Data Types!
+//////////////////////// Day 0: Print Hello World!
+
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello World." + "\n" + "Welcome to 30 Days of Code.");
+  }
+}
+
+//////////////////////// Day 1: Data Types!
 
 public class DataTypesPractice {
 
@@ -15,7 +23,7 @@ public class DataTypesPractice {
     }
 }
 
-//////////////////////// Day 2 Data Types!
+//////////////////////// Day 2: Arithmetic!
 
 import java.io.*;
 import java.util.*;
@@ -39,7 +47,7 @@ public class Arithmetic {
     }
 }
 
-//////////////////////// Day 3 If-Else Statements!
+//////////////////////// Day 3: If-Else Statements!
 
 import java.io.*;
 import java.util.*;
@@ -67,7 +75,7 @@ public class Solution {
     }
 }
 
-//////////////////////// Day 4 Logical Operators + Class vs. Instance!
+//////////////////////// Day 4: Logical Operators + Class vs. Instance!
 
 public class Person {
   
@@ -98,37 +106,3 @@ public class Person {
   		// Increment the age of the person in here
         this.age++;
 	}
-
-//////////////////////// Day 5: Loops!
-
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-
-public class Solution {
-
-    public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-            
-        Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
-
-        for (int i = 0; i < T; i++) {
-            int a = sc.nextInt();
-            int b = sc.nextInt();
-            int N = sc.nextInt();
-
-            int testCase = a;
-            String solution = "";
-
-            for (int k = 0; k < N; k++) {                
-                testCase += (Math.pow(2, k) * b);
-                if (solution == "") solution += testCase;
-                else solution += " " + testCase;
-            }
-            System.out.println(solution);
-            
-        }
-    }
-}

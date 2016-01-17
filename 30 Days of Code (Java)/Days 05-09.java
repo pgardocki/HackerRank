@@ -1,4 +1,38 @@
-//////////////////////// Day 6 Data Types!
+//////////////////////// Day 5: Loops!
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+            
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        for (int i = 0; i < T; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int N = sc.nextInt();
+
+            int testCase = a;
+            String solution = "";
+
+            for (int k = 0; k < N; k++) {                
+                testCase += (Math.pow(2, k) * b);
+                if (solution == "") solution += testCase;
+                else solution += " " + testCase;
+            }
+            System.out.println(solution);
+            
+        }
+    }
+}
+
+//////////////////////// Day 6: Data Types!
 
 public class Solution {
 
@@ -16,7 +50,7 @@ public class Solution {
     }
 }
 
-//////////////////////// Day 7 Arrays!
+//////////////////////// Day 7: Arrays!
 
 public class Solution {
 
@@ -89,29 +123,5 @@ public class Solution {
     static  int find_gcd(int a,int b) {
         if (b == 0) return a;
         return find_gcd(b, a%b);
-    }
-}
-
-//////////////////////// Day 10: Binary Numbers!
-
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-
-public class Solution {
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int testCases = sc.nextInt();
-        for (int i = 0; i < testCases; i++) {
-            int num = sc.nextInt();
-            String base2 = "";
-            while (num > 0) {
-                base2 = (num % 2) + base2;
-                num /= 2;
-            }
-            System.out.println(base2);
-        }
     }
 }
