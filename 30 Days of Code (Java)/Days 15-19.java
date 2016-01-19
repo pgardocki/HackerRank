@@ -51,8 +51,76 @@ public class Solution {
 
 //////////////////////// Day 17: Exceptions!
 
+class NegativeNumberException extends Exception {
+  public NegativeNumberException(String exception) {
+    super(exception);
+  }
+}
 
+class Calculator {
+  
+  public int power(int n, int p) throws NegativeNumberException {
+    if (p < 0 || n < 0) {
+      throw new NegativeNumberException("n and p should be non-negative");
+    } else {
+      return (int)Math.pow(n, p);
+    }
+  }
+}
 
 //////////////////////// Day 18: Queues & Stacks!
 
+class Palindrome {
+  
+  List<Character> charStack = new ArrayList<Character>();
+  List<Character> charQueue = new ArrayList<Character>();
+  
+  void pushCharacter(char ch) {
+    charStack.add(ch);
+  }
+  
+  void enqueueCharacter(char ch) {
+    charQueue.add(ch);
+  }
+  
+  char popCharacter() {
+    return charStack.remove(charStack.size() - 1);
+  }
+  
+  char dequeueCharacter() {
+    return charQueue.remove(0);
+  }    
+
+}
+
 //////////////////////// Day 19: Interfaces!
+
+import java.io.*;
+import java.util.*;
+interface AdvancedArithmetic {
+  int divisorSum(int n);
+}
+
+class Calculator implements AdvancedArithmetic {
+  List<Integer> divisors = new ArrayList<>();
+  
+  public int divisorSum(int n) {
+    for (int i = 1; i <= n / 2; i++) {
+      if (n % i == 0) divisors.add(i);
+    }
+
+    int sum = 0;
+    for (int e: divisors) { sum += e; }
+    return sum;
+  }
+}
+
+public class Solution {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    in n = sc.nextInt();
+    AdvancedArithmetic myCalculator = new Calculator();
+    int sum = myCalculator.divisorSum(n);
+    System.out.println("I implemented: AdvancedArithmetic\n" + sum);
+  }
+}

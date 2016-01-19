@@ -76,18 +76,18 @@ public class Solution {
 
 public class Person {
   
-  int age;	
+  int age;
 
-	public Person(int initial_Age) {  		
+  public Person(int initial_Age) {  		
     if (initial_Age < 0) {
       this.age = 0;
       System.out.println("This person is not valid, setting age to 0.");
     } else {
       this.age = initial_Age;
     }
-	}
+  }
 
-	public void amIOld() {  		
+  public void amIOld() {  		
     if (age < 13) {
       System.out.println("You are young.");
     } else if (age >= 13 && age < 18) {
@@ -95,9 +95,9 @@ public class Person {
     } else {
       System.out.println("You are old.");
     }
-	}
+  }
 
-	public void yearPasses() {
+  public void yearPasses() {
   	// Increment the age of the person in here
     this.age++;
 	}
