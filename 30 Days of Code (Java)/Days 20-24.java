@@ -145,3 +145,32 @@ public static ArrayList<Node> goDownALevel(ArrayList<Node> tree) {
 }
 
 //////////////////////// Day 24: More Review + More Linked Lists!
+
+public static Node removeDuplicates(Node head) {
+  if (head == null) return head;
+  
+  Node firstNode = head;
+  Node nodeToCheck = head.next;
+  
+  while (nodeToCheck != null) {
+    if (firstNode.data != nodeToCheck.data) {
+      firstNode = nodeToCheck;
+      nodeToCheck = nodeToCheck.next;
+    } else {
+      firstNode.next = nodeToCheck.next;
+      nodeToCheck = nodeToCheck.next;
+    }
+  }
+  return head;
+}
+
+
+///////////// Code below is by agrawroh
+
+Node temp = head;
+while(temp.next != null) {
+  if(temp.data == temp.next.data)
+    temp.next = temp.next.next;
+  else
+    temp = temp.next;
+}
