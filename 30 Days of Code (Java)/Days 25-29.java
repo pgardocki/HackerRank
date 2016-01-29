@@ -82,7 +82,7 @@ public class Solution {
   }
 }
 
-//////////////////////// Day 28: Introduction to Databases & More Review!
+//////////////////////// Day 28: RegEx, Patterns, and Intro to Databases!
 
 import java.util.Scanner;
 import java.util.regex.*;
@@ -106,3 +106,32 @@ public class Solution {
 
 //////////////////////// Day 29: Look at Everything We've Learned!
 
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    for (int i = sc.nextInt(); i > 0; i--) {
+      String s = sc.next();
+      String output = isFunny(s) ? "Funny" : "Not Funny";
+      System.out.println(output);
+    }
+  }
+  
+  public static boolean isFunny(String s) {
+    for (int i = 0, j = s.length() - 1; i < j ; i++) {
+      int forward = Math.abs(s.charAt(i + 1) - s.charAt(i));
+      int backward = Math.abs(s.charAt(j - i - 1) - s.charAt(j - i));
+      if (forward == backward) {
+        continue;
+      } else {
+        return false;
+      }
+    }
+    return true;
+  }
+}
