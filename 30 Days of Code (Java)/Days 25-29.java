@@ -65,6 +65,44 @@ public class Solution {
 
 //////////////////////// Day 27: Testing Part II!
 
+public class Solution {
+  
+  public static void main(String[] args) {
+    System.out.println("5");
+    System.out.println("3 3");
+    System.out.println("-1 0 1");
+    System.out.println("4 3");
+    System.out.println("-2 -1 0 2");
+    System.out.println("5 3");
+    System.out.println("-2 0 1 2 3");
+    System.out.println("6 3");
+    System.out.println("-3 -2 -1 0 1 2");
+    System.out.println("7 3");
+    System.out.println("-1 0 1 2 3 4 5");
+  }
+}
+
 //////////////////////// Day 28: Introduction to Databases & More Review!
 
+import java.util.Scanner;
+import java.util.regex.*;
+
+public class Solution {
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int testCases = Integer.parseInt(in.nextLine());
+    while(testCases > 0) {
+      String pattern = in.nextLine();
+      try {
+        Pattern.compile(pattern);
+        System.out.println("Valid");
+      } catch (PatternSyntaxException e) {        
+        System.out.println("Invalid");
+      }
+      testCases -= 1;       
+    }
+  }
+}
+
 //////////////////////// Day 29: Look at Everything We've Learned!
+
